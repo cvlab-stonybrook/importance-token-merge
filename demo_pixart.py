@@ -9,7 +9,7 @@ device = torch.device("cuda:0")
 Path("results").mkdir(parents=True, exist_ok=True)
 
 model_id = "PixArt-alpha/PixArt-XL-2-1024-MS"
-pipe = PixArtAlphaPipeline.from_pretrained(model_id, torch_dtype=torch.float16, local_files_only=True)
+pipe = PixArtAlphaPipeline.from_pretrained(model_id, torch_dtype=torch.float16)
 pipe = pipe.to(device)
 
 ratio, seed, prompt = 0.5, 50, "A cute cat"
